@@ -108,6 +108,10 @@ properties:
     type: number
     format: float
     description: TODO (what is different from max_ratio?)
+  reannounce:
+    type: integer
+    format: int64
+    description: "Time until the next tracker reannounce"
   save_path:
     type: string
     description: Path where this torrent's data is stored
