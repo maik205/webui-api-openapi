@@ -5,14 +5,61 @@ info:
     - All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
     - Either `GET` or `POST` can be used as the request type for all API methods.
     - All API methods require [authentication](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#authentication) (except the `/api/v2/auth/login` method itself, obviously).
-  termsOfService: 'https://github.com/qbittorrent/qBittorrent/blob/master/COPYING'
+  termsOfService: https://github.com/qbittorrent/qBittorrent/blob/master/COPYING
   license:
     name: GNU GPLv2
-    url: 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html'
-  version: 2.8.3
+    url: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+  version: 2.11.3
 servers:
-  - url: 'http://localhost:8080/api/v2'
+  - url: http://localhost:8080/api/v2
     description: qBittorrent Web UI API
+tags:
+  - name: auth
+    description: |
+      All Authentication API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
+
+      qBittorrent uses cookie-based authentication.
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#authentication
+      description: qBittorrent WebUI API documentation
+  - name: app
+    description: 'All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#application
+      description: qBittorrent WebUI API documentation
+  - name: log
+    description: 'All Log API methods are under "log", e.g.: `/api/v2/log/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#log
+      description: qBittorrent WebUI API documentation
+  - name: sync
+    description: 'Sync API implements requests for obtaining changes since the last request. All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#sync
+      description: qBittorrent WebUI API documentation
+  - name: transfer
+    description: 'All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#transfer-info
+      description: qBittorrent WebUI API documentation
+  - name: torrents
+    description: 'All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#torrent-management
+      description: qBittorrent WebUI API documentation
+  - name: rss
+    description: 'All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rss-experimental
+      description: qBittorrent WebUI API documentation
+  - name: search
+    description: 'All Search API methods are under "search", e.g.: `/api/v2/search/methodName.`'
+    externalDocs:
+      url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#search
+      description: qBittorrent WebUI API documentation
+externalDocs:
+  url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)
+  description: qBittorrent WebUI API documentation
 paths:
   /auth/login:
     post:
@@ -22,7 +69,7 @@ paths:
       description: |
         Upon success, the response will contain a cookie with your SID. You must supply the cookie whenever you want to perform an operation that requires authentication.
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#login'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#login
         description: WebUI-API on qBittorrent wiki
       operationId: authLoginPost
       parameters:
@@ -84,7 +131,7 @@ paths:
         - auth
       summary: Logout
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#logout'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#logout
         description: WebUI-API on qBittorrent wiki
       operationId: authLogoutPost
       responses:
@@ -98,7 +145,7 @@ paths:
         - app
       summary: Get application version
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-version'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-version
         description: WebUI-API on qBittorrent wiki
       operationId: appVersionGet
       responses:
@@ -108,7 +155,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                description: 'The response is a string with the application version, e.g. `v4.1.3`'
+                description: The response is a string with the application version, e.g. `v4.1.3`
                 example: v4.1.3
       security:
         - sid: []
@@ -118,7 +165,7 @@ paths:
         - app
       summary: Get API version
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-api-version'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-api-version
         description: WebUI-API on qBittorrent wiki
       operationId: appWebapiVersionGet
       responses:
@@ -128,7 +175,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                description: 'The response is a string with the WebAPI version, e.g. `2.0`'
+                description: The response is a string with the WebAPI version, e.g. `2.0`
                 example: '2.0'
       security:
         - sid: []
@@ -138,7 +185,7 @@ paths:
         - app
       summary: Get build info
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-build-info'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-build-info
         description: WebUI-API on qBittorrent wiki
       operationId: appBuildInfoGet
       responses:
@@ -156,7 +203,7 @@ paths:
         - app
       summary: Shutdown application
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#shutdown-application'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#shutdown-application
         description: WebUI-API on qBittorrent wiki
       operationId: appShutdownGet
       responses:
@@ -170,7 +217,7 @@ paths:
         - app
       summary: Get application preferences
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-preferences'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-preferences
         description: WebUI-API on qBittorrent wiki
       operationId: appPreferencesGet
       responses:
@@ -345,7 +392,7 @@ paths:
 
         For a list of possible preference options see [Get application preferences](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-preferences)
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-application-preferences'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-application-preferences
         description: WebUI-API on qBittorrent wiki
       operationId: appSetPreferencesPost
       requestBody:
@@ -375,7 +422,7 @@ paths:
         - app
       summary: Get default save path
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-default-save-path'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-default-save-path
         description: WebUI-API on qBittorrent wiki
       operationId: appDefaultSavePathGet
       responses:
@@ -385,8 +432,8 @@ paths:
             text/plain:
               schema:
                 type: string
-                description: 'The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.'
-                example: 'C:/Users/Dayman/Downloads'
+                description: The response is a string with the default save path, e.g. `C:/Users/Dayman/Downloads`.
+                example: C:/Users/Dayman/Downloads
       security:
         - sid: []
   /log/main:
@@ -395,7 +442,7 @@ paths:
         - log
       summary: Get log
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-log'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-log
         description: WebUI-API on qBittorrent wiki
       operationId: logMainPost
       requestBody:
@@ -553,7 +600,7 @@ paths:
         - log
       summary: Get peer log
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-peer-log'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-peer-log
         description: WebUI-API on qBittorrent wiki
       operationId: logPeersPost
       requestBody:
@@ -588,7 +635,7 @@ paths:
         - sync
       summary: Get main data
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-main-data'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-main-data
         description: WebUI-API on qBittorrent wiki
       operationId: syncMaindataPost
       requestBody:
@@ -600,7 +647,7 @@ paths:
                 rid:
                   type: integer
                   format: int64
-                  description: 'Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)'
+                  description: Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
             example: /api/v2/sync/maindata?rid=14
         required: true
       responses:
@@ -629,7 +676,7 @@ paths:
         - sync
       summary: Get torrent peers data
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-peers-data'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-peers-data
         description: WebUI-API on qBittorrent wiki
       operationId: syncTorrentPeersPost
       requestBody:
@@ -644,7 +691,7 @@ paths:
                 rid:
                   type: integer
                   format: int64
-                  description: 'Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)'
+                  description: Response ID. If not provided, `rid=0` will be assumed. If the given `rid` is different from the one of last server reply, `full_update` will be `true` (see the server reply details for more info)
               required:
                 - hash
             example: /api/v2/sync/torrentPeers?hash=8c212779b4abde7c6bc608063a0d008b7e40ce32?rid=14
@@ -667,7 +714,7 @@ paths:
       summary: Get global transfer info
       description: This method returns info you usually see in qBt status bar.
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-transfer-info'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-transfer-info
         description: WebUI-API on qBittorrent wiki
       operationId: transferInfoGet
       responses:
@@ -685,7 +732,7 @@ paths:
         - transfer
       summary: Get alternative speed limits state
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-alternative-speed-limits-state'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-alternative-speed-limits-state
         description: WebUI-API on qBittorrent wiki
       operationId: transferSpeedLimitsModeGet
       responses:
@@ -699,7 +746,7 @@ paths:
                 enum:
                   - 0
                   - 1
-                description: 'The response is `1` if alternative speed limits are enabled, `0` otherwise.'
+                description: The response is `1` if alternative speed limits are enabled, `0` otherwise.
       security:
         - sid: []
   /transfer/toggleSpeedLimitsMode:
@@ -708,7 +755,7 @@ paths:
         - transfer
       summary: Toggle alternative speed limits
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-alternative-speed-limits'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-alternative-speed-limits
         description: WebUI-API on qBittorrent wiki
       operationId: transferToggleSpeedLimitsModeGet
       responses:
@@ -722,7 +769,7 @@ paths:
         - transfer
       summary: Get global download limit
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-download-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-download-limit
         description: WebUI-API on qBittorrent wiki
       operationId: transferDownloadLimitGet
       responses:
@@ -742,7 +789,7 @@ paths:
         - transfer
       summary: Set global download limit
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-global-download-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-global-download-limit
         description: WebUI-API on qBittorrent wiki
       operationId: transferSetDownloadLimitPost
       requestBody:
@@ -767,7 +814,7 @@ paths:
         - transfer
       summary: Get global upload limit
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-upload-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-upload-limit
         description: WebUI-API on qBittorrent wiki
       operationId: transferUploadLimitGet
       responses:
@@ -787,7 +834,7 @@ paths:
         - transfer
       summary: Set global upload limit
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-global-upload-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-global-upload-limit
         description: WebUI-API on qBittorrent wiki
       operationId: transferSetUploadLimitPost
       requestBody:
@@ -812,7 +859,7 @@ paths:
         - transfer
       summary: Ban peers
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#ban-peers'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#ban-peers
         description: WebUI-API on qBittorrent wiki
       operationId: transferBanPeersPost
       requestBody:
@@ -825,7 +872,7 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: 'The peer to ban, or multiple peers separated by a pipe `|`. Each peer is a colon-separated `host:port`'
+                  description: The peer to ban, or multiple peers separated by a pipe `|`. Each peer is a colon-separated `host:port`
             encoding:
               peers:
                 style: pipeDelimited
@@ -842,7 +889,7 @@ paths:
         - torrents
       summary: Get torrent list
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsInfoPost
       requestBody:
@@ -869,10 +916,10 @@ paths:
                   description: 'Filter torrent list by state. Allowed state filters: `all`, `downloading`, `seeding`, `completed`, `paused`, `active`, `inactive`, `resumed`, `stalled`, `stalled_uploading`, `stalled_downloading`, `errored`'
                 category:
                   type: string
-                  description: 'Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`'
+                  description: Get torrents with the given category (empty string means "without category"; no "category" parameter means "any category" <- broken until [#11748](https://github.com/qbittorrent/qBittorrent/issues/11748) is resolved). Remember to URL-encode the category name. For example, `My category` becomes `My%20category`
                 tag:
                   type: string
-                  description: 'Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`'
+                  description: Get torrents with the given tag (empty string means "without tag"; no "tag" parameter means "any tag". Remember to URL-encode the category name. For example, `My tag` becomes `My%20tag`
                 sort:
                   type: string
                   description: Sort torrents by given key. They can be sorted using any field of the response's JSON array (which are documented below) as the sort key.
@@ -887,7 +934,7 @@ paths:
                 offset:
                   type: integer
                   format: int64
-                  description: 'Set offset (if less than 0, offset from end)'
+                  description: Set offset (if less than 0, offset from end)
                 hashes:
                   type: array
                   items:
@@ -941,9 +988,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent generic properties
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-generic-properties'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-generic-properties
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsPropertiesPost
       requestBody:
@@ -1010,9 +1057,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent trackers
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-trackers'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-trackers
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsTrackersPost
       requestBody:
@@ -1036,7 +1083,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TorrentsTrackers'
-                description: 'The response is a JSON array, where each element contains info about one tracker, with the following fields'
+                description: The response is a JSON array, where each element contains info about one tracker, with the following fields
               example: |
                 [
                   {
@@ -1055,9 +1102,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent web seeds
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-web-seeds'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-web-seeds
         description: WebUI-API on qBittorrent wiki
       operationId: torrentWebseedsPost
       requestBody:
@@ -1081,7 +1128,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TorrentsWebseeds'
-                description: 'The response is a JSON array, where each element is information about one webseed, with the following fields'
+                description: The response is a JSON array, where each element is information about one webseed, with the following fields
                 example: |
                   [
                     {
@@ -1100,9 +1147,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent contents
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsFilesPost
       requestBody:
@@ -1160,9 +1207,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent pieces' states
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-pieces-states'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-pieces-states
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsPieceStatesPost
       requestBody:
@@ -1220,9 +1267,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent pieces' hashes
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-pieces-hashes'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-pieces-hashes
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsPieceHashesPost
       requestBody:
@@ -1263,13 +1310,13 @@ paths:
       tags:
         - torrents
       summary: Pause torrents
-      description: 'Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#pause-torrents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#pause-torrents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsPausePost
       requestBody:
-        description: 'The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `|`, to pause multiple torrents, or set to `all`, to pause all torrents.'
+        description: The hashes of the torrents you want to pause. `hashes` can contain multiple hashes separated by `|`, to pause multiple torrents, or set to `all`, to pause all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1293,13 +1340,13 @@ paths:
       tags:
         - torrents
       summary: Resume torrents
-      description: 'Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#resume-torrents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#resume-torrents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsResumePost
       requestBody:
-        description: 'The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `|`, to resume multiple torrents, or set to `all`, to resume all torrents.'
+        description: The hashes of the torrents you want to resume. `hashes` can contain multiple hashes separated by `|`, to resume multiple torrents, or set to `all`, to resume all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1323,13 +1370,13 @@ paths:
       tags:
         - torrents
       summary: Delete torrents
-      description: 'Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-torrents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-torrents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsDeletePost
       requestBody:
-        description: 'The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `|`, to delete multiple torrents, or set to `all`, to delete all torrents.'
+        description: The hashes of the torrents you want to delete. `hashes` can contain multiple hashes separated by `|`, to delete multiple torrents, or set to `all`, to delete all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1339,7 +1386,7 @@ paths:
                   properties:
                     deleteFiles:
                       type: boolean
-                      description: 'If set to `true`, the downloaded data will also be deleted, otherwise has no effect.'
+                      description: If set to `true`, the downloaded data will also be deleted, otherwise has no effect.
               required:
                 - hashes
                 - deleteFiles
@@ -1362,13 +1409,13 @@ paths:
       tags:
         - torrents
       summary: Recheck torrents
-      description: 'Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#recheck-torrents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#recheck-torrents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRecheckPost
       requestBody:
-        description: 'The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.'
+        description: The hashes of the torrents you want to recheck. `hashes` can contain multiple hashes separated by `|`, to recheck multiple torrents, or set to `all`, to recheck all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1392,13 +1439,13 @@ paths:
       tags:
         - torrents
       summary: Reannounce torrents
-      description: 'Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#reannounce-torrents'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#reannounce-torrents
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsReannouncePost
       requestBody:
-        description: 'The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.'
+        description: The hashes of the torrents you want to reannounce. `hashes` can contain multiple hashes separated by `|`, to reannounce multiple torrents, or set to `all`, to reannounce all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1422,9 +1469,9 @@ paths:
       tags:
         - torrents
       summary: Add new torrent
-      description: 'This method can add torrents from server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.'
+      description: This method can add torrents from server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported.
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-torrent'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-torrent
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsAddPost
       requestBody:
@@ -1517,9 +1564,9 @@ paths:
       tags:
         - torrents
       summary: Add trackers to torrent
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-trackers-to-torrent'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-trackers-to-torrent
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsAddTrackersPost
       requestBody:
@@ -1545,7 +1592,7 @@ paths:
                   example: 8c212779b4abde7c6bc608063a0d008b7e40ce32
                 urls:
                   type: string
-                  example: 'http://192.168.0.1/announce%0Audp://192.168.0.1:3333/dummyAnnounce'
+                  example: http://192.168.0.1/announce%0Audp://192.168.0.1:3333/dummyAnnounce
               required:
                 - hash
                 - urls
@@ -1563,7 +1610,7 @@ paths:
         - torrents
       summary: Edit trackers
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-trackers'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-trackers
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsEditTrackerPost
       requestBody:
@@ -1603,7 +1650,7 @@ paths:
         - torrents
       summary: Remove trackers
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-trackers'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-trackers
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRemoveTrackersPost
       requestBody:
@@ -1619,7 +1666,7 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: 'URLs to remove, separated by `|`'
+                  description: URLs to remove, separated by `|`
               required:
                 - hash
                 - urls
@@ -1643,7 +1690,7 @@ paths:
         - torrents
       summary: Add peers
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-peers'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-peers
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsAddPeersPost
       requestBody:
@@ -1656,12 +1703,12 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: 'The hash of the torrent, or multiple hashes separated by a pipe `|`'
+                  description: The hash of the torrent, or multiple hashes separated by a pipe `|`
                 peers:
                   type: array
                   items:
                     type: string
-                  description: 'The peer to add, or multiple peers separated by a pipe `|`. Each peer is a colon-separated `host:port`'
+                  description: The peer to add, or multiple peers separated by a pipe `|`. Each peer is a colon-separated `host:port`
               required:
                 - hashes
                 - peers
@@ -1685,13 +1732,13 @@ paths:
       tags:
         - torrents
       summary: Increase torrent priority
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#increase-torrent-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#increase-torrent-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsIncreasePrioPost
       requestBody:
-        description: 'The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.'
+        description: The hashes of the torrents you want to increase the priority of. `hashes` can contain multiple hashes separated by `|`, to increase the priority of multiple torrents, or set to `all`, to increase the priority of all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1717,13 +1764,13 @@ paths:
       tags:
         - torrents
       summary: Decrease torrent priority
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#decrease-torrent-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#decrease-torrent-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsDecreasePrioPost
       requestBody:
-        description: 'The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.'
+        description: The hashes of the torrents you want to decrease the priority of. `hashes` can contain multiple hashes separated by `|`, to decrease the priority of multiple torrents, or set to `all`, to decrease the priority of all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1749,13 +1796,13 @@ paths:
       tags:
         - torrents
       summary: Maximal torrent priority
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#maximal-torrent-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#maximal-torrent-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsTopPrioPost
       requestBody:
-        description: 'The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.'
+        description: The hashes of the torrents you want to set to the maximum priority. `hashes` can contain multiple hashes separated by `|`, to set multiple torrents to the maximum priority, or set to `all`, to set all torrents to the maximum priority.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1781,13 +1828,13 @@ paths:
       tags:
         - torrents
       summary: Minimal torrent priority
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#minimal-torrent-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#minimal-torrent-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsBottomPrioPost
       requestBody:
-        description: 'The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.'
+        description: The hashes of the torrents you want to set to the minimum priority. `hashes` can contain multiple hashes separated by `|`, to set multiple torrents to the minimum priority, or set to `all`, to set all torrents to the minimum priority.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -1814,7 +1861,7 @@ paths:
         - torrents
       summary: Set file priority
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-file-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-file-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsFilePrioPost
       requestBody:
@@ -1835,7 +1882,7 @@ paths:
                   items:
                     type: integer
                     format: int64
-                  description: 'File ids, separated by `|`'
+                  description: File ids, separated by `|`
                 priority:
                   type: integer
                   format: int32
@@ -1844,7 +1891,7 @@ paths:
                     - 1
                     - 6
                     - 7
-                  description: 'File priority to set (consult [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents) for possible values)'
+                  description: File priority to set (consult [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents) for possible values)
               required:
                 - hash
                 - id
@@ -1870,9 +1917,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent download limit
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-download-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-download-limit
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsDownloadLimitPost
       requestBody:
@@ -1925,9 +1972,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent download limit
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-download-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-download-limit
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetDownloadLimitPost
       requestBody:
@@ -1962,9 +2009,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent share limit
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-share-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-share-limit
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetShareLimitsPost
       requestBody:
@@ -2020,9 +2067,9 @@ paths:
       tags:
         - torrents
       summary: Get torrent upload limit
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-upload-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-upload-limit
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsUploadLimitPost
       requestBody:
@@ -2075,9 +2122,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent upload limit
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-upload-limit'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-upload-limit
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetUploadLimitPost
       requestBody:
@@ -2112,9 +2159,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent location
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-location'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-location
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetLocationPost
       requestBody:
@@ -2169,9 +2216,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent name
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-name'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-name
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRenamePost
       requestBody:
@@ -2215,9 +2262,9 @@ paths:
       tags:
         - torrents
       summary: Set torrent category
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-category'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-category
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetCategoryPost
       requestBody:
@@ -2269,7 +2316,7 @@ paths:
         - torrents
       summary: Get all categories
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-categories'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-categories
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsCategoriesGet
       responses:
@@ -2300,7 +2347,7 @@ paths:
         - torrents
       summary: Add new category
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-category'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-category
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsCreateCategoryPost
       requestBody:
@@ -2340,7 +2387,7 @@ paths:
         - torrents
       summary: Edit category
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-category'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-category
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsEditCategoryPost
       requestBody:
@@ -2379,7 +2426,7 @@ paths:
         - torrents
       summary: Remove categories
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-categories'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-categories
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRemoveCategoriesPost
       requestBody:
@@ -2416,9 +2463,9 @@ paths:
       tags:
         - torrents
       summary: Add torrent tags
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-torrent-tags'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-torrent-tags
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsAddTagsPost
       requestBody:
@@ -2458,9 +2505,9 @@ paths:
       tags:
         - torrents
       summary: Remove torrent tags
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-torrent-tags'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-torrent-tags
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRemoveTagsPost
       requestBody:
@@ -2501,7 +2548,7 @@ paths:
         - torrents
       summary: Get all tags
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-tags'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-tags
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsTagsGet
       responses:
@@ -2527,7 +2574,7 @@ paths:
         - torrents
       summary: Create tags
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#create-tags'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#create-tags
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsCreateTagsPost
       requestBody:
@@ -2573,7 +2620,7 @@ paths:
         - torrents
       summary: Delete tags
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-tags'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-tags
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsDeleteTagsPost
       requestBody:
@@ -2618,9 +2665,9 @@ paths:
       tags:
         - torrents
       summary: Set automatic torrent management
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-automatic-torrent-management'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-automatic-torrent-management
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetAutoManagementPost
       requestBody:
@@ -2670,13 +2717,13 @@ paths:
       tags:
         - torrents
       summary: Toggle sequential download
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-sequential-download'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-sequential-download
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsToggleSequentialDownloadPost
       requestBody:
-        description: 'The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.'
+        description: The hashes of the torrents you want to toggle sequential download for. `hashes` can contain multiple hashes separated by `|`, to toggle sequential download for multiple torrents, or set to `all`, to toggle sequential download for all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -2700,13 +2747,13 @@ paths:
       tags:
         - torrents
       summary: Set first/last piece priority
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-firstlast-piece-priority'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-firstlast-piece-priority
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsToggleFirstLastPiecePrioPost
       requestBody:
-        description: 'The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.'
+        description: The hashes of the torrents you want to toggle the first/last piece priority for. `hashes` can contain multiple hashes separated by `|`, to toggle the first/last piece priority for multiple torrents, or set to `all`, to toggle the first/last piece priority for all torrents.
         content:
           application/x-www-form-urlencoded:
             schema:
@@ -2730,9 +2777,9 @@ paths:
       tags:
         - torrents
       summary: Set force start
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-force-start'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-force-start
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetForceStartPost
       requestBody:
@@ -2767,9 +2814,9 @@ paths:
       tags:
         - torrents
       summary: Set super seeding
-      description: 'Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).'
+      description: Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list).
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-super-seeding'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-super-seeding
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsSetSuperSeedingPost
       requestBody:
@@ -2805,7 +2852,7 @@ paths:
         - torrents
       summary: Rename file
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-file'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-file
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRenameFilePost
       requestBody:
@@ -2820,7 +2867,7 @@ paths:
         '400':
           description: Missing `newPath` parameter
         '409':
-          description: 'Invalid `newPath` or `oldPath`, or `newPath` already in use'
+          description: Invalid `newPath` or `oldPath`, or `newPath` already in use
       security:
         - sid: []
   /torrents/renameFolder:
@@ -2829,7 +2876,7 @@ paths:
         - torrents
       summary: Rename folder
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-folder'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-folder
         description: WebUI-API on qBittorrent wiki
       operationId: torrentsRenameFolderPost
       requestBody:
@@ -2844,7 +2891,7 @@ paths:
         '400':
           description: Missing `newPath` parameter
         '409':
-          description: 'Invalid `newPath` or `oldPath`, or `newPath` already in use'
+          description: Invalid `newPath` or `oldPath`, or `newPath` already in use
       security:
         - sid: []
   /rss/addFolder:
@@ -2853,7 +2900,7 @@ paths:
         - rss
       summary: Add folder
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-folder'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-folder
         description: WebUI-API on qBittorrent wiki
       operationId: rssAddFolderPost
       requestBody:
@@ -2881,7 +2928,7 @@ paths:
         - rss
       summary: Add feed
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-feed'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-feed
         description: WebUI-API on qBittorrent wiki
       operationId: rssAddFeedPost
       requestBody:
@@ -2892,7 +2939,7 @@ paths:
               properties:
                 url:
                   type: string
-                  description: 'URL of RSS feed (e.g. "http://thepiratebay.org/rss//top100/200")'
+                  description: URL of RSS feed (e.g. "http://thepiratebay.org/rss//top100/200")
                 path:
                   type: string
                   description: Full path of added folder (e.g. "The Pirate Bay\Top100\Video")
@@ -2912,7 +2959,7 @@ paths:
         - rss
       summary: Remove item
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-item'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-item
         description: WebUI-API on qBittorrent wiki
       operationId: rssRemoveItemPost
       requestBody:
@@ -2940,7 +2987,7 @@ paths:
         - rss
       summary: Move item
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#move-item'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#move-item
         description: WebUI-API on qBittorrent wiki
       operationId: rssMoveItemPost
       requestBody:
@@ -2972,7 +3019,7 @@ paths:
         - rss
       summary: Get all items
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-items'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-items
         description: WebUI-API on qBittorrent wiki
       operationId: rssItemsPost
       requestBody:
@@ -3011,7 +3058,7 @@ paths:
       summary: Mark as read
       description: If `articleId` is provided only the article is marked as read otherwise the whole feed is going to be marked as read.
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#mark-as-read'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#mark-as-read
         description: WebUI-API on qBittorrent wiki
       operationId: rssMarkAsReadPost
       requestBody:
@@ -3041,7 +3088,7 @@ paths:
       summary: Refresh item
       description: Refreshes folder or feed.
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#refresh-item'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#refresh-item
         description: WebUI-API on qBittorrent wiki
       operationId: rssRefreshItemPost
       requestBody:
@@ -3067,7 +3114,7 @@ paths:
         - rss
       summary: Set auto-downloading rule
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-auto-downloading-rule'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-auto-downloading-rule
         description: WebUI-API on qBittorrent wiki
       operationId: rssSetRulePost
       requestBody:
@@ -3118,7 +3165,7 @@ paths:
         - rss
       summary: Rename auto-downloading rule
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-auto-downloading-rule'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-auto-downloading-rule
         description: WebUI-API on qBittorrent wiki
       operationId: rssRenameRulePost
       requestBody:
@@ -3148,7 +3195,7 @@ paths:
         - rss
       summary: Remove auto-downloading rule
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-auto-downloading-rule'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-auto-downloading-rule
         description: WebUI-API on qBittorrent wiki
       operationId: rssRemoveRulePost
       requestBody:
@@ -3174,7 +3221,7 @@ paths:
         - rss
       summary: Get all auto-downloading rules
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-auto-downloading-rules'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-auto-downloading-rules
         description: WebUI-API on qBittorrent wiki
       operationId: rssRulesGet
       responses:
@@ -3216,7 +3263,7 @@ paths:
         - rss
       summary: Get all articles matching a rule
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-articles-matching-a-rule'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-articles-matching-a-rule
         description: WebUI-API on qBittorrent wiki
       operationId: rssMatchingArticlesPost
       requestBody:
@@ -3269,7 +3316,7 @@ paths:
         - search
       summary: Start search
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#start-search'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#start-search
         description: WebUI-API on qBittorrent wiki
       operationId: searchStartPost
       requestBody:
@@ -3321,7 +3368,7 @@ paths:
         - search
       summary: Stop search
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#stop-search'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#stop-search
         description: WebUI-API on qBittorrent wiki
       operationId: searchStopPost
       requestBody:
@@ -3346,7 +3393,7 @@ paths:
         - search
       summary: Get search status
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-status'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-status
         description: WebUI-API on qBittorrent wiki
       operationId: searchStatusPost
       requestBody:
@@ -3357,7 +3404,7 @@ paths:
               properties:
                 id:
                   type: number
-                  description: 'ID of the search job. If not specified, all search jobs are returned'
+                  description: ID of the search job. If not specified, all search jobs are returned
         required: true
       responses:
         '200':
@@ -3387,7 +3434,7 @@ paths:
         - search
       summary: Get search results
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-results'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-results
         description: WebUI-API on qBittorrent wiki
       operationId: searchResultsPost
       requestBody:
@@ -3427,7 +3474,7 @@ paths:
         - search
       summary: Delete search
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-search'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-search
         description: WebUI-API on qBittorrent wiki
       operationId: searchDeletePost
       requestBody:
@@ -3455,7 +3502,7 @@ paths:
         - search
       summary: Get search plugins
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-plugins'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-plugins
         description: WebUI-API on qBittorrent wiki
       operationId: searchPluginsGet
       responses:
@@ -3508,7 +3555,7 @@ paths:
         - search
       summary: Install search plugin
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#install-search-plugin'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#install-search-plugin
         description: WebUI-API on qBittorrent wiki
       operationId: searchInstallPluginPost
       requestBody:
@@ -3521,7 +3568,7 @@ paths:
                   type: array
                   items:
                     type: string
-                  description: 'Url or file path of the plugin to install (e.g. "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py"). Supports multiple sources separated by `|`'
+                  description: Url or file path of the plugin to install (e.g. "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/legittorrents.py"). Supports multiple sources separated by `|`
               required:
                 - sources
             encoding:
@@ -3540,7 +3587,7 @@ paths:
         - search
       summary: Uninstall search plugin
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#uninstall-search-plugin'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#uninstall-search-plugin
         description: WebUI-API on qBittorrent wiki
       operationId: searchUninstallPluginPost
       requestBody:
@@ -3572,7 +3619,7 @@ paths:
         - search
       summary: Enable search plugin
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#enable-search-plugin'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#enable-search-plugin
         description: WebUI-API on qBittorrent wiki
       operationId: searchEnablePluginPost
       requestBody:
@@ -3608,7 +3655,7 @@ paths:
         - search
       summary: Update search plugins
       externalDocs:
-        url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#update-search-plugins'
+        url: https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#update-search-plugins
         description: WebUI-API on qBittorrent wiki
       operationId: searchUpdatePluginsPost
       responses:
@@ -3670,13 +3717,13 @@ components:
           description: True if torrent should be relocated when its Category's save path changes
         save_path:
           type: string
-          description: 'Default save path for torrents, separated by slashes'
+          description: Default save path for torrents, separated by slashes
         temp_path_enabled:
           type: boolean
           description: True if folder for incomplete torrents is enabled
         temp_path:
           type: string
-          description: 'Path for incomplete torrents, separated by slashes'
+          description: Path for incomplete torrents, separated by slashes
         scan_dirs:
           type: object
           additionalProperties:
@@ -3730,7 +3777,7 @@ components:
           description: True if external program should be run after torrent has finished downloading
         autorun_program:
           type: string
-          description: 'Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively'
+          description: Program path/name/arguments to run if `autorun_enabled` is enabled; path is separated by slashes; you can use `%f` and `%n` arguments, which will be expanded by qBittorent as path_to_torrent_file and torrent_name (from the GUI; not the .torrent file name) respectively
         queueing_enabled:
           type: boolean
           description: True if torrent queuing is enabled
@@ -3748,9 +3795,9 @@ components:
           description: Maximum number of active simultaneous uploads
         dont_count_slow_torrents:
           type: boolean
-          description: 'If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information'
+          description: If true torrents w/o any activity (stalled ones) will not be counted towards `max_active_*` limits; see [dont_count_slow_torrents](https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents) for more information
           externalDocs:
-            url: 'https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents'
+            url: https://www.libtorrent.org/reference-Settings.html#dont_count_slow_torrents
             description: libtorrent settings reference
         slow_torrent_dl_rate_threshold:
           type: integer
@@ -3842,13 +3889,13 @@ components:
             | 2     | μTP         |
         limit_utp_rate:
           type: boolean
-          description: 'True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher'
+          description: True if `[du]l_limit` should be applied to uTP connections; this option is only available in qBittorent built against libtorrent version 0.16.X and higher
         limit_tcp_overhead:
           type: boolean
           description: 'True if `[du]l_limit` should be applied to estimated TCP overhead (service data: e.g. packet headers)'
         limit_lan_peers:
           type: boolean
-          description: 'True if `[du]l_limit` should be applied to peers on the LAN'
+          description: True if `[du]l_limit` should be applied to peers on the LAN
         alt_dl_limit:
           type: integer
           format: int64
@@ -3931,9 +3978,9 @@ components:
             | 2     | Force encryption off |
         anonymous_mode:
           type: boolean
-          description: 'If true anonymous mode will be enabled; read more [here](https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher'
+          description: If true anonymous mode will be enabled; read more [here](https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode); this option is only available in qBittorent built against libtorrent version 0.16.X and higher
           externalDocs:
-            url: 'https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode'
+            url: https://github.com/qbittorrent/qBittorrent/wiki/Anonymous-Mode
             description: qBittorrent wiki
         proxy_type:
           type: integer
@@ -3986,7 +4033,7 @@ components:
           description: True if external IP filter should be enabled
         ip_filter_path:
           type: string
-          description: 'Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes'
+          description: Path to IP filter file (.dat, .p2p, .p2b files are supported); path is separated by slashes
         ip_filter_trackers:
           type: boolean
           description: True if IP filters are applied to trackers
@@ -4318,120 +4365,6 @@ components:
         reason:
           type: string
           description: Reason of the block
-    MainData:
-      type: object
-      description: The response is a JSON object with the following possible fields
-      properties:
-        rid:
-          type: integer
-          format: int64
-          description: Response ID
-        full_update:
-          type: boolean
-          description: Whether the response contains all the data or partial data
-        torrents:
-          type: object
-          description: 'Property: torrent hash, value: same as [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)'
-          additionalProperties:
-            $ref: '#/components/schemas/TorrentInfo'
-        torrents_removed:
-          type: array
-          items:
-            type: string
-          description: List of hashes of torrents removed since last request
-        categories:
-          type: object
-          description: Info for categories added since last request
-          additionalProperties:
-            $ref: '#/components/schemas/TorrentsCategory'
-        categories_removed:
-          type: array
-          items:
-            type: string
-          description: List of categories removed since last request
-        tags:
-          type: array
-          items:
-            type: string
-          description: List of tags added since last request
-        tags_removed:
-          type: array
-          items:
-            type: string
-          description: List of tags removed since last request
-        server_state:
-          description: Global transfer info
-          $ref: '#/components/schemas/TransferInfo'
-    TorrentPeers:
-      type: object
-      description: The response is TODO
-    TransferInfo:
-      type: object
-      description: |
-        The response is a JSON object with the following fields
-
-        In addition to the above in partial data requests (see [Get partial data](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-partial-data) for more info):
-      properties:
-        dl_info_speed:
-          type: integer
-          format: int64
-          description: Global download rate (bytes/s)
-        dl_info_data:
-          type: integer
-          format: int64
-          description: Data downloaded this session (bytes)
-        up_info_speed:
-          type: integer
-          format: int64
-          description: Global upload rate (bytes/s)
-        up_info_data:
-          type: integer
-          format: int64
-          description: Data uploaded this session (bytes)
-        dl_rate_limit:
-          type: integer
-          format: int64
-          description: Download rate limit (bytes/s)
-        up_rate_limit:
-          type: integer
-          format: int64
-          description: Upload rate limit (bytes/s)
-        dht_nodes:
-          type: integer
-          format: int64
-          description: DHT nodes connected to
-        connection_status:
-          type: string
-          description: |
-            Connection status. See possible values here below
-
-            Possible values of connection_status:
-            | Value        |
-            | ------------ |
-            | connected    |
-            | firewalled   |
-            | disconnected |
-        queueing:
-          type: boolean
-          description: True if torrent queueing is enabled
-        use_alt_speed_limits:
-          type: boolean
-          description: True if alternative speed limits are enabled
-        refresh_interval:
-          type: integer
-          format: int64
-          description: Transfer list refresh interval (milliseconds)
-      example: |
-        {
-          "connection_status":"connected",
-          "dht_nodes":386,
-          "dl_info_data":681521119,
-          "dl_info_speed":0,
-          "dl_rate_limit":0,
-          "up_info_data":10747904,
-          "up_info_speed":0,
-          "up_rate_limit":1048576
-        }
     TorrentInfo:
       type: object
       properties:
@@ -4463,7 +4396,7 @@ components:
           description: Time (Unix Epoch) when the torrent completed
         content_path:
           type: string
-          description: 'Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)'
+          description: Absolute path of torrent content (root path for multifile torrents, absolute file path for singlefile torrents)
         dl_limit:
           type: integer
           format: int64
@@ -4543,6 +4476,10 @@ components:
           type: number
           format: float
           description: TODO (what is different from max_ratio?)
+        reannounce:
+          type: integer
+          format: int64
+          description: Time until the next tracker reannounce
         save_path:
           type: string
           description: Path where this torrent's data is stored
@@ -4553,7 +4490,7 @@ components:
         seeding_time_limit:
           type: integer
           format: int64
-          description: 'TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1.'
+          description: TODO (what is different from `max_seeding_time`?) seeding_time_limit is a per torrent setting, when Automatic Torrent Management is disabled, furthermore then max_seeding_time is set to seeding_time_limit for this torrent. If Automatic Torrent Management is enabled, the value is -2. And if max_seeding_time is unset it have a default value -1.
         seen_complete:
           type: integer
           format: int64
@@ -4644,6 +4581,127 @@ components:
           type: integer
           format: int64
           description: Torrent upload speed (bytes/s)
+    TorrentsCategory:
+      type: object
+      properties:
+        name:
+          type: string
+        savePath:
+          type: string
+    TransferInfo:
+      type: object
+      description: |
+        The response is a JSON object with the following fields
+
+        In addition to the above in partial data requests (see [Get partial data](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-partial-data) for more info):
+      properties:
+        dl_info_speed:
+          type: integer
+          format: int64
+          description: Global download rate (bytes/s)
+        dl_info_data:
+          type: integer
+          format: int64
+          description: Data downloaded this session (bytes)
+        up_info_speed:
+          type: integer
+          format: int64
+          description: Global upload rate (bytes/s)
+        up_info_data:
+          type: integer
+          format: int64
+          description: Data uploaded this session (bytes)
+        dl_rate_limit:
+          type: integer
+          format: int64
+          description: Download rate limit (bytes/s)
+        up_rate_limit:
+          type: integer
+          format: int64
+          description: Upload rate limit (bytes/s)
+        dht_nodes:
+          type: integer
+          format: int64
+          description: DHT nodes connected to
+        connection_status:
+          type: string
+          description: |
+            Connection status. See possible values here below
+
+            Possible values of connection_status:
+            | Value        |
+            | ------------ |
+            | connected    |
+            | firewalled   |
+            | disconnected |
+        queueing:
+          type: boolean
+          description: True if torrent queueing is enabled
+        use_alt_speed_limits:
+          type: boolean
+          description: True if alternative speed limits are enabled
+        refresh_interval:
+          type: integer
+          format: int64
+          description: Transfer list refresh interval (milliseconds)
+      example: |
+        {
+          "connection_status":"connected",
+          "dht_nodes":386,
+          "dl_info_data":681521119,
+          "dl_info_speed":0,
+          "dl_rate_limit":0,
+          "up_info_data":10747904,
+          "up_info_speed":0,
+          "up_rate_limit":1048576
+        }
+    MainData:
+      type: object
+      description: The response is a JSON object with the following possible fields
+      properties:
+        rid:
+          type: integer
+          format: int64
+          description: Response ID
+        full_update:
+          type: boolean
+          description: Whether the response contains all the data or partial data
+        torrents:
+          type: object
+          description: 'Property: torrent hash, value: same as [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)'
+          additionalProperties:
+            $ref: '#/components/schemas/TorrentInfo'
+        torrents_removed:
+          type: array
+          items:
+            type: string
+          description: List of hashes of torrents removed since last request
+        categories:
+          type: object
+          description: Info for categories added since last request
+          additionalProperties:
+            $ref: '#/components/schemas/TorrentsCategory'
+        categories_removed:
+          type: array
+          items:
+            type: string
+          description: List of categories removed since last request
+        tags:
+          type: array
+          items:
+            type: string
+          description: List of tags added since last request
+        tags_removed:
+          type: array
+          items:
+            type: string
+          description: List of tags removed since last request
+        server_state:
+          description: Global transfer info
+          $ref: '#/components/schemas/TransferInfo'
+    TorrentPeers:
+      type: object
+      description: The response is TODO
     TorrentsProperties:
       type: object
       description: |
@@ -4810,23 +4868,23 @@ components:
         tier:
           type: integer
           format: int64
-          description: 'Tracker priority tier. Lower tier trackers are tried before higher tiers. Tier numbers are valid when `>= 0`, `< 0` is used as placeholder when `tier` does not exist for special entries (such as DHT).'
+          description: Tracker priority tier. Lower tier trackers are tried before higher tiers. Tier numbers are valid when `>= 0`, `< 0` is used as placeholder when `tier` does not exist for special entries (such as DHT).
         num_peers:
           type: integer
           format: int64
-          description: 'Number of peers for current torrent, as reported by the tracker'
+          description: Number of peers for current torrent, as reported by the tracker
         num_seeds:
           type: integer
           format: int64
-          description: 'Number of seeds for current torrent, asreported by the tracker'
+          description: Number of seeds for current torrent, asreported by the tracker
         num_leeches:
           type: integer
           format: int64
-          description: 'Number of leeches for current torrent, as reported by the tracker'
+          description: Number of leeches for current torrent, as reported by the tracker
         num_downloaded:
           type: integer
           format: int64
-          description: 'Number of completed downlods for current torrent, as reported by the tracker'
+          description: Number of completed downlods for current torrent, as reported by the tracker
         msg:
           type: string
           description: Tracker message (there is no way of knowing what this message is - it's up to tracker admins)
@@ -4893,38 +4951,12 @@ components:
             type: string
       required:
         - hashes
-    AddTorrentsURLs:
-      allOf:
-        - type: object
-          properties:
-            urls:
-              type: string
-              description: URLs separated with newlines
-        - $ref: '#/components/schemas/AddTorrentsCommon'
-      required:
-        - urls
-    AddTorrentsFiles:
-      allOf:
-        - type: object
-          properties:
-            torrents:
-              type: array
-              items:
-                type: string
-                format: binary
-              description: Raw data of torrent file. `torrents` can be presented multiple times.
-        - $ref: '#/components/schemas/AddTorrentsCommon'
-      required:
-        - torrents
     AddTorrentsCommon:
       type: object
       properties:
         savepath:
           type: string
           description: Download folder
-        cookie:
-          type: string
-          description: Cookie sent to download the .torrent file
         category:
           type: string
           description: Category for the torrent
@@ -4932,21 +4964,21 @@ components:
           type: array
           items:
             type: string
-          description: 'Tags for the torrent, split by '','''
+          description: Tags for the torrent, split by ','
         skip_checking:
           type: string
           enum:
             - 'true'
             - 'false'
           default: 'false'
-          description: 'Skip hash checking. Possible values are `true`, `false` (default)'
+          description: Skip hash checking. Possible values are `true`, `false` (default)
         paused:
           type: string
           enum:
             - 'true'
             - 'false'
           default: 'false'
-          description: 'Add torrents in the paused state. Possible values are `true`, `false` (default)'
+          description: Add torrents in the paused state. Possible values are `true`, `false` (default)
         root_folder:
           type: string
           enum:
@@ -4954,7 +4986,7 @@ components:
             - 'false'
             - unset
           default: unset
-          description: 'Create the root folder. Possible values are `true`, `false`, unset (default)'
+          description: Create the root folder. Possible values are `true`, `false`, unset (default)
         rename:
           type: string
           description: Rename torrent
@@ -4983,14 +5015,37 @@ components:
             - 'true'
             - 'false'
           default: 'false'
-          description: 'Enable sequential download. Possible values are `true`, `false` (default)'
+          description: Enable sequential download. Possible values are `true`, `false` (default)
         firstLastPiecePrio:
           type: string
           enum:
             - 'true'
             - 'false'
           default: 'false'
-          description: 'Prioritize download first last piece. Possible values are `true`, `false` (default)'
+          description: Prioritize download first last piece. Possible values are `true`, `false` (default)
+    AddTorrentsURLs:
+      allOf:
+        - type: object
+          properties:
+            urls:
+              type: string
+              description: URLs separated with newlines
+        - $ref: '#/components/schemas/AddTorrentsCommon'
+      required:
+        - urls
+    AddTorrentsFiles:
+      allOf:
+        - type: object
+          properties:
+            torrents:
+              type: array
+              items:
+                type: string
+                format: binary
+              description: Raw data of torrent file. `torrents` can be presented multiple times.
+        - $ref: '#/components/schemas/AddTorrentsCommon'
+      required:
+        - torrents
     TorrentsLimit:
       type: object
       additionalProperties:
@@ -5015,13 +5070,6 @@ components:
           - 8c212779b4abde7c6bc608063a0d008b7e40ce32
           - 284b83c9c7935002391129fd97f43db5d7cc2ba0
         limit: 131072
-    TorrentsCategory:
-      type: object
-      properties:
-        name:
-          type: string
-        savePath:
-          type: string
     Category:
       type: object
       properties:
@@ -5271,50 +5319,3 @@ components:
       type: apiKey
       name: SID
       in: cookie
-tags:
-  - name: auth
-    description: |
-      All Authentication API methods are under "auth", e.g.: `/api/v2/auth/methodName`.
-
-      qBittorrent uses cookie-based authentication.
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#authentication'
-      description: qBittorrent WebUI API documentation
-  - name: app
-    description: 'All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#application'
-      description: qBittorrent WebUI API documentation
-  - name: log
-    description: 'All Log API methods are under "log", e.g.: `/api/v2/log/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#log'
-      description: qBittorrent WebUI API documentation
-  - name: sync
-    description: 'Sync API implements requests for obtaining changes since the last request. All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#sync'
-      description: qBittorrent WebUI API documentation
-  - name: transfer
-    description: 'All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#transfer-info'
-      description: qBittorrent WebUI API documentation
-  - name: torrents
-    description: 'All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#torrent-management'
-      description: qBittorrent WebUI API documentation
-  - name: rss
-    description: 'All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rss-experimental'
-      description: qBittorrent WebUI API documentation
-  - name: search
-    description: 'All Search API methods are under "search", e.g.: `/api/v2/search/methodName.`'
-    externalDocs:
-      url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#search'
-      description: qBittorrent WebUI API documentation
-externalDocs:
-  url: 'https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)'
-  description: qBittorrent WebUI API documentation
