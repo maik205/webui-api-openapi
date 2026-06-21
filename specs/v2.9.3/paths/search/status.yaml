@@ -1,0 +1,40 @@
+post:
+  tags:
+    - search
+  summary: Get search status
+  externalDocs:
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-search-status"
+    description: WebUI-API on qBittorrent wiki
+  operationId: searchStatusPost
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            id:
+              type: number
+              description: "ID of the search job. If not specified, all search jobs are returned"
+    required: true
+  responses:
+    "200":
+      description: All other scenarios- see JSON below
+      content:
+        application/json:
+          schema:
+            type: array
+            description: The response is a JSON array of objects containing the following fields
+            items:
+              $ref: "../../schemas/search/SearchJobStatus.yaml"
+            example: |
+              [
+                {
+                    "id": 12345,
+                    "status": "Running",
+                    "total": 170
+                }
+              ]
+    "404":
+      description: Search job was not found
+  security:
+    - sid: []
