@@ -1,0 +1,18 @@
+type: object
+description: "Possible fields:"
+properties:
+  name:
+    type: string
+    description: Cookie name
+  domain:
+    type: string
+    description: Cookie domain
+  path:
+    type: string
+    description: Cookie path
+  value:
+    type: string
+    description: Cookie value
+  expireDate:
+    type: integer
+    description: Seconds since epoch

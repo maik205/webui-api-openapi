@@ -1,0 +1,30 @@
+get:
+  tags:
+    - app
+  summary: Get the json array of cookies to send when downloading .torrent files.
+  externalDocs:
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-cookies"
+    description: WebUI-API on qBittorrent wiki
+  operationId: appGetCookies
+  responses:
+    "200":
+      description: All scenarios
+      content:
+        application/json:
+          schema:
+            type: array
+            items: 
+              $ref: "../../schemas/app/Cookies.yaml"
+            description: The cookies configuration
+            example: |
+              [
+                  {
+                      "name":"Example",
+                      "domain":"example.com",
+                      "path":"/",
+                      "value":"foo=bar"
+                      "expirationDate":1507969127,
+                  },
+              ]
+  security:
+    - sid: []
