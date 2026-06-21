@@ -1,0 +1,39 @@
+post:
+  tags:
+    - search
+  summary: Get search results
+  externalDocs:
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-search-results"
+    description: WebUI-API on qBittorrent wiki
+  operationId: searchResultsPost
+  requestBody:
+    content:
+      application/x-www-form-urlencoded:
+        schema:
+          allOf:
+            - $ref: "../../schemas/search/SearchJob.yaml"
+            - type: object
+              properties:
+                limit:
+                  type: number
+                  description: max number of results to return. 0 or negative means no limit
+                offset:
+                  type: number
+                  description: result to start at. A negative number means count backwards (e.g. -2 returns the 2 most recent results)
+          required:
+            - id
+    required: true
+  responses:
+    "200":
+      description: All other scenarios- see JSON below
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/search/SearchResults.yaml"
+            description: The response is a JSON object with the following fields
+    "404":
+      description: Search job was not found
+    "409":
+      description: "Offset is too large, or too small (e.g. absolute value of negative number is greater than # results)"
+  security:
+    - sid: []
