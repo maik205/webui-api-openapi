@@ -3,9 +3,6 @@ properties:
   savepath:
     type: string
     description: Download folder
-  cookie:
-    type: string
-    description: Cookie sent to download the .torrent file
   category:
     type: string
     description: Category for the torrent
