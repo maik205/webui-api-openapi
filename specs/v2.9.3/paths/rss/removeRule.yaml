@@ -3,7 +3,7 @@ post:
     - rss
   summary: Remove auto-downloading rule
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#remove-auto-downloading-rule"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-auto-downloading-rule"
     description: WebUI-API on qBittorrent wiki
   operationId: rssRemoveRulePost
   requestBody:

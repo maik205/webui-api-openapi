@@ -4,7 +4,7 @@ post:
   summary: Refresh item
   description: Refreshes folder or feed.
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#refresh-item"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#refresh-item"
     description: WebUI-API on qBittorrent wiki
   operationId: rssRefreshItemPost
   requestBody:

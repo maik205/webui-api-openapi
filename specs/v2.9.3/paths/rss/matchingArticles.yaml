@@ -3,7 +3,7 @@ post:
     - rss
   summary: Get all articles matching a rule
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-all-articles-matching-a-rule"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-articles-matching-a-rule"
     description: WebUI-API on qBittorrent wiki
   operationId: rssMatchingArticlesPost
   requestBody:

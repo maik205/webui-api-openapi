@@ -5,7 +5,7 @@ info:
   description: |
     - All API methods are under `/api/v2/APIName/methodName`, where `APIName` is a certain subgroup of API methods whose functionality is related.
     - Either `GET` or `POST` can be used as the request type for all API methods.
-    - All API methods require [authentication](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#authentication) (except the `/api/v2/auth/login` method itself, obviously).
+    - All API methods require [authentication](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#authentication) (except the `/api/v2/auth/login` method itself, obviously).
   termsOfService: "https://github.com/qbittorrent/qBittorrent/blob/master/COPYING"
   license:
     name: GNU GPLv2
@@ -219,44 +219,44 @@ tags:
 
       qBittorrent uses cookie-based authentication.
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#authentication"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#authentication"
       description: qBittorrent WebUI API documentation
   - name: app
     description: 'All Application API methods are under "app", e.g.: `/api/v2/app/methodName`.'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#application"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#application"
       description: qBittorrent WebUI API documentation
   - name: log
     description: 'All Log API methods are under "log", e.g.: `/api/v2/log/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#log"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#log"
       description: qBittorrent WebUI API documentation
   - name: sync
     description: 'Sync API implements requests for obtaining changes since the last request. All Sync API methods are under "sync", e.g.: `/api/v2/sync/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#sync"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#sync"
       description: qBittorrent WebUI API documentation
   - name: transfer
     description: 'All Transfer info API methods are under "transfer", e.g.: `/api/v2/transfer/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#transfer-info"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#transfer-info"
       description: qBittorrent WebUI API documentation
   - name: torrents
     description: 'All Torrent management API methods are under "torrents", e.g.: `/api/v2/torrents/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#torrent-management"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#torrent-management"
       description: qBittorrent WebUI API documentation
   - name: rss
     description: 'All RSS API methods are under "rss", e.g.: `/api/v2/rss/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#rss-experimental"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rss-experimental"
       description: qBittorrent WebUI API documentation
   - name: search
     description: 'All Search API methods are under "search", e.g.: `/api/v2/search/methodName.`'
     externalDocs:
-      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#search"
+      url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#search"
       description: qBittorrent WebUI API documentation
 
 externalDocs:
-  url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)"
+  url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)"
   description: qBittorrent WebUI API documentation

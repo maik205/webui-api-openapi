@@ -4,7 +4,7 @@ post:
   summary: Add new torrent
   description: "This method can add torrents from server local file or from URLs. `http://`, `https://`, `magnet:` and `bc://bt/` links are supported."
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-torrent"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-torrent"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsAddPost
   requestBody:

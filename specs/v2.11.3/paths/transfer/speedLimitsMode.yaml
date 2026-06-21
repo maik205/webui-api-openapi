@@ -3,7 +3,7 @@ get:
     - transfer
   summary: Get alternative speed limits state
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-alternative-speed-limits-state"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-alternative-speed-limits-state"
     description: WebUI-API on qBittorrent wiki
   operationId: transferSpeedLimitsModeGet
   responses:

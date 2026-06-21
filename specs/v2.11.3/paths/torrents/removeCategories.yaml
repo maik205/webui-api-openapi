@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Remove categories
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#remove-categories"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-categories"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsRemoveCategoriesPost
   requestBody:

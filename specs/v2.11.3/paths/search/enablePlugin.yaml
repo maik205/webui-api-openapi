@@ -3,7 +3,7 @@ post:
     - search
   summary: Enable search plugin
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#enable-search-plugin"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#enable-search-plugin"
     description: WebUI-API on qBittorrent wiki
   operationId: searchEnablePluginPost
   requestBody:

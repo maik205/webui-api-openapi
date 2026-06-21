@@ -3,7 +3,7 @@ post:
     - log
   summary: Get log
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-log"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-log"
     description: WebUI-API on qBittorrent wiki
   operationId: logMainPost
   requestBody:

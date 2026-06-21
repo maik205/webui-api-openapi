@@ -3,7 +3,7 @@ post:
     - transfer
   summary: Set global upload limit
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-global-upload-limit"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-global-upload-limit"
     description: WebUI-API on qBittorrent wiki
   operationId: transferSetUploadLimitPost
   requestBody:

@@ -3,7 +3,7 @@ get:
     - rss
   summary: Get all auto-downloading rules
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-all-auto-downloading-rules"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-auto-downloading-rules"
     description: WebUI-API on qBittorrent wiki
   operationId: rssRulesGet
   responses:

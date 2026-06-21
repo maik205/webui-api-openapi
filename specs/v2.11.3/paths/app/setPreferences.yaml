@@ -8,9 +8,9 @@ post:
     2. Paths in `scan_dirs` must exist, otherwise this option will have no effect
     3. String values must be quoted; integer and boolean values must never be quoted
 
-    For a list of possible preference options see [Get application preferences](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-application-preferences)
+    For a list of possible preference options see [Get application preferences](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-preferences)
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-application-preferences"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-application-preferences"
     description: WebUI-API on qBittorrent wiki
   operationId: appSetPreferencesPost
   requestBody:

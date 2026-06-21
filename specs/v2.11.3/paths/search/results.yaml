@@ -3,7 +3,7 @@ post:
     - search
   summary: Get search results
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-search-results"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-results"
     description: WebUI-API on qBittorrent wiki
   operationId: searchResultsPost
   requestBody:

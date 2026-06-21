@@ -3,7 +3,7 @@ post:
     - search
   summary: Update search plugins
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#update-search-plugins"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#update-search-plugins"
     description: WebUI-API on qBittorrent wiki
   operationId: searchUpdatePluginsPost
   responses:

@@ -3,7 +3,7 @@ post:
     - rss
   summary: Move item
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#move-item"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#move-item"
     description: WebUI-API on qBittorrent wiki
   operationId: rssMoveItemPost
   requestBody:

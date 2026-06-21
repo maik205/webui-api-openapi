@@ -3,7 +3,7 @@ get:
     - torrents
   summary: Get all tags
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-all-tags"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-tags"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsTagsGet
   responses:

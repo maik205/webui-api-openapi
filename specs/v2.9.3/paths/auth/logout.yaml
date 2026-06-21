@@ -3,7 +3,7 @@ post:
     - auth
   summary: Logout
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#logout"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#logout"
     description: WebUI-API on qBittorrent wiki
   operationId: authLogoutPost
   responses:

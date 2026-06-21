@@ -3,7 +3,7 @@ get:
     - app
   summary: Get default save path
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-default-save-path"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-default-save-path"
     description: WebUI-API on qBittorrent wiki
   operationId: appDefaultSavePathGet
   responses:

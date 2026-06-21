@@ -2,9 +2,9 @@ post:
   tags:
     - torrents
   summary: Toggle sequential download
-  description: "Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list)."
+  description: "Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)."
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#toggle-sequential-download"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-sequential-download"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsToggleSequentialDownloadPost
   requestBody:

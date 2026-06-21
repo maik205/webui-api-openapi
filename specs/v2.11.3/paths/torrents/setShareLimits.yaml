@@ -2,9 +2,9 @@ post:
   tags:
     - torrents
   summary: Set torrent share limit
-  description: "Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list)."
+  description: "Requires knowing the torrent hash. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)."
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-torrent-share-limit"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-torrent-share-limit"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsSetShareLimitsPost
   requestBody:

@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Get torrent list
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsInfoPost
   requestBody:

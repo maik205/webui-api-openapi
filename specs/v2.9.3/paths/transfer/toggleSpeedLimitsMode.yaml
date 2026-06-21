@@ -3,7 +3,7 @@ get:
     - transfer
   summary: Toggle alternative speed limits
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#toggle-alternative-speed-limits"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#toggle-alternative-speed-limits"
     description: WebUI-API on qBittorrent wiki
   operationId: transferToggleSpeedLimitsModeGet
   responses:

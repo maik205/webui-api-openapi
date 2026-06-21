@@ -10,7 +10,7 @@ properties:
     description: Whether the response contains all the data or partial data
   torrents:
     type: object
-    description: "Property: torrent hash, value: same as [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list)"
+    description: "Property: torrent hash, value: same as [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)"
     additionalProperties:
       $ref: "../torrents/TorrentInfo.yaml"
   torrents_removed:

@@ -3,7 +3,7 @@ get:
     - app
   summary: Shutdown application
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#shutdown-application"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#shutdown-application"
     description: WebUI-API on qBittorrent wiki
   operationId: appShutdownGet
   responses:

@@ -3,7 +3,7 @@ get:
     - torrents
   summary: Get all categories
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-all-categories"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-categories"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsCategoriesGet
   responses:

@@ -3,7 +3,7 @@ get:
     - search
   summary: Get search plugins
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-search-plugins"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-search-plugins"
     description: WebUI-API on qBittorrent wiki
   operationId: searchPluginsGet
   responses:

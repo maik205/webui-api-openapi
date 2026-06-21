@@ -3,7 +3,7 @@ post:
     - sync
   summary: Get torrent peers data
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-peers-data"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-peers-data"
     description: WebUI-API on qBittorrent wiki
   operationId: syncTorrentPeersPost
   requestBody:

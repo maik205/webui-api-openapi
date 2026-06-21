@@ -3,7 +3,7 @@ post:
     - rss
   summary: Set auto-downloading rule
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-auto-downloading-rule"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-auto-downloading-rule"
     description: WebUI-API on qBittorrent wiki
   operationId: rssSetRulePost
   requestBody:

@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Edit category
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#edit-category"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-category"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsEditCategoryPost
   requestBody:

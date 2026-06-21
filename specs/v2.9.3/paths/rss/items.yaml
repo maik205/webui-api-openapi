@@ -3,7 +3,7 @@ post:
     - rss
   summary: Get all items
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-all-items"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-all-items"
     description: WebUI-API on qBittorrent wiki
   operationId: rssItemsPost
   requestBody:

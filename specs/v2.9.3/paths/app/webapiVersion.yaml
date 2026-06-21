@@ -3,7 +3,7 @@ get:
     - app
   summary: Get API version
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-api-version"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-api-version"
     description: WebUI-API on qBittorrent wiki
   operationId: appWebapiVersionGet
   responses:

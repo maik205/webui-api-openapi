@@ -3,7 +3,7 @@ post:
     - search
   summary: Delete search
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#delete-search"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-search"
     description: WebUI-API on qBittorrent wiki
   operationId: searchDeletePost
   requestBody:

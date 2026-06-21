@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Create tags
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#create-tags"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#create-tags"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsCreateTagsPost
   requestBody:

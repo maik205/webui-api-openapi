@@ -3,7 +3,7 @@ post:
     - search
   summary: Start search
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#start-search"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#start-search"
     description: WebUI-API on qBittorrent wiki
   operationId: searchStartPost
   requestBody:

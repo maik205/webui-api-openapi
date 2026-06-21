@@ -3,7 +3,7 @@ get:
     - app
   summary: Get build info
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-build-info"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-build-info"
     description: WebUI-API on qBittorrent wiki
   operationId: appBuildInfoGet
   responses:

@@ -3,7 +3,7 @@ post:
     - rss
   summary: Remove item
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#remove-item"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-item"
     description: WebUI-API on qBittorrent wiki
   operationId: rssRemoveItemPost
   requestBody:

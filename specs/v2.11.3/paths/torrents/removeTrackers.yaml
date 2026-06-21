@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Remove trackers
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#remove-trackers"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#remove-trackers"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsRemoveTrackersPost
   requestBody:

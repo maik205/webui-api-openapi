@@ -3,7 +3,7 @@ post:
     - search
   summary: Stop search
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#stop-search"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#stop-search"
     description: WebUI-API on qBittorrent wiki
   operationId: searchStopPost
   requestBody:

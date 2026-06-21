@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Delete tags
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#delete-tags"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#delete-tags"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsDeleteTagsPost
   requestBody:

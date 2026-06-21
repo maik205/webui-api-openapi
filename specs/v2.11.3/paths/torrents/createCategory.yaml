@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Add new category
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-category"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-new-category"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsCreateCategoryPost
   requestBody:

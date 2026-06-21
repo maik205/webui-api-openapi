@@ -4,7 +4,7 @@ post:
   summary: Mark as read
   description: If `articleId` is provided only the article is marked as read otherwise the whole feed is going to be marked as read.
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#mark-as-read"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#mark-as-read"
     description: WebUI-API on qBittorrent wiki
   operationId: rssMarkAsReadPost
   requestBody:

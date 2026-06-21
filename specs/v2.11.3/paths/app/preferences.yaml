@@ -3,7 +3,7 @@ get:
     - app
   summary: Get application preferences
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-application-preferences"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-application-preferences"
     description: WebUI-API on qBittorrent wiki
   operationId: appPreferencesGet
   responses:

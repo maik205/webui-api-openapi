@@ -3,7 +3,7 @@ get:
     - transfer
   summary: Get global upload limit
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-global-upload-limit"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-global-upload-limit"
     description: WebUI-API on qBittorrent wiki
   operationId: transferUploadLimitGet
   responses:

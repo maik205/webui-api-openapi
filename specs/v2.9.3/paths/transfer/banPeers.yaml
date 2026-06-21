@@ -3,7 +3,7 @@ post:
     - transfer
   summary: Ban peers
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#ban-peers"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#ban-peers"
     description: WebUI-API on qBittorrent wiki
   operationId: transferBanPeersPost
   requestBody:

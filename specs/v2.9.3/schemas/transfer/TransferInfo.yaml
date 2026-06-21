@@ -2,7 +2,7 @@ type: object
 description: |
   The response is a JSON object with the following fields
 
-  In addition to the above in partial data requests (see [Get partial data](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-partial-data) for more info):
+  In addition to the above in partial data requests (see [Get partial data](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-partial-data) for more info):
 properties:
   dl_info_speed:
     type: integer

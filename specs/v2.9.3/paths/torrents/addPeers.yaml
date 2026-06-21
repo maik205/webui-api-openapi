@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Add peers
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-peers"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#add-peers"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsAddPeersPost
   requestBody:

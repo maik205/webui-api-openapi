@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Rename file
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#rename-file"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#rename-file"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsRenameFilePost
   requestBody:

@@ -3,14 +3,14 @@ post:
     - torrents
   summary: Set file priority
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-file-priority"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#set-file-priority"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsFilePrioPost
   requestBody:
     description: |
-      `id` values correspond to file position inside the array returned by [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
+      `id` values correspond to file position inside the array returned by [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents), e.g. `id=0` for first file, `id=1` for second file, etc.
 
-      Since 2.8.2 it is reccomended to use `index` field returned by [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-contents) (since the files can be filtered and the `index` value may differ from the position inside the response array).
+      Since 2.8.2 it is reccomended to use `index` field returned by [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents) (since the files can be filtered and the `index` value may differ from the position inside the response array).
     content:
       application/x-www-form-urlencoded:
         schema:
@@ -33,7 +33,7 @@ post:
                 - 1
                 - 6
                 - 7
-              description: "File priority to set (consult [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-contents) for possible values)"
+              description: "File priority to set (consult [torrent contents API](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-contents) for possible values)"
           required:
             - hash
             - id

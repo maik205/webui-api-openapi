@@ -3,7 +3,7 @@ post:
     - torrents
   summary: Edit trackers
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#edit-trackers"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#edit-trackers"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsEditTrackerPost
   requestBody:

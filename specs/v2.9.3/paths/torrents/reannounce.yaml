@@ -2,9 +2,9 @@ post:
   tags:
     - torrents
   summary: Reannounce torrents
-  description: "Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list)."
+  description: "Requires knowing the torrent hashes. You can get it from [torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-torrent-list)."
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#reannounce-torrents"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#reannounce-torrents"
     description: WebUI-API on qBittorrent wiki
   operationId: torrentsReannouncePost
   requestBody:

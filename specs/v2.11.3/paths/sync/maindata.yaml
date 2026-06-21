@@ -3,7 +3,7 @@ post:
     - sync
   summary: Get main data
   externalDocs:
-    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-main-data"
+    url: "https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-5.0)#get-main-data"
     description: WebUI-API on qBittorrent wiki
   operationId: syncMaindataPost
   requestBody:
